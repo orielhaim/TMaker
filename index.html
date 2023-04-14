@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TMaker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <select id="tag">
+    <option value="p">P</option>
+    <option value="b">B</option>
+    <option value="i">I</option>
+    <option value="u">U</option>
+    <option value="a">A</option>
+    <option value="h1">H1</option>
+    <option value="h2">H2</option>
+    <option value="h3">H3</option>
+    <option value="h4">H4</option>
+    <option value="h5">H5</option>
+    <option value="h6">H6</option>
+    <option value="strong">Strong</option>
+    <option value="button">Button</option>
+    <option value="div">Div</option>
+    <option value="input">Input</option>
+    <option value="textarea">Textarea</option>
+  </select>
+  <label for="tag">Select Tag</label><br>
+  <button id="preview-btn">Preview</button>
+  <button id="source-btn">Source</button>
+  <div id="preview-back" style="display:none;"><iframe id="preview"></iframe></div>
+  <div id="source-back" style="display:none;"><div id="source">
+    <select id="source-type">
+      <option value="dense">Dense</option>
+      <option value="divided">Divided</option>
+    </select>
+    <br>
+    <p class="source-divided">HTML</p>
+    <textarea id="source-code" disabled></textarea>
+    <br>
+    <p class="source-divided">CSS</p>
+    <textarea id="source-css" class="source-divided" disabled></textarea>
+  </div></div>
+  <hr>
+  <details>
+    <summary>Data</summary>
+    <input type="text" placeholder="Value" id="data-value"><br>
+    <input type="text" placeholder="ID" id="data-id"><br>
+    <input type="text" placeholder="Class" id="data-class">
+  </details>
+  <details id="text">
+    <summary>Text</summary>
+    <input type="color" id="text-color">
+    <label for="text-color">Color</label>
+    <br>
+    <input type="number" value="15" min="0" id="text-size">
+    <select id="text-size-type" sizeType></select>
+    <label for="text-size-type">Size</label>
+    <br>
+    <select id="text-align">
+      <option value="none">None</option>
+      <option value="center">Center</option>
+      <option value="left">Left</option>
+      <option value="right">Right</option>
+    </select>
+    <label for="text-align">Align</label>
+  </details>
+  <details>
+    <summary>Background</summary>
+    <select id="back-type"><option value="color">Color</option><option value="text">Image</option></select>
+    <input type="color" value="#ffffff" id="back">
+  </details>
+  <details>
+    <summary>Border</summary>
+    <select id="border-type">
+      <option value="none" title="cancels a border">None</option>
+      <option value="solid" title="Defines a solid border">Solid</option>
+      <option value="double" title="Defines a double border">Double</option>
+      <option value="dashed" title="Defines a dashed border">Dashed</option>
+      <option value="dotted" title="Defines a dotted border">Dotted</option>
+      <option value="groove" title="Defines a 3D grooved border. The effect depends on the border-color value">Groove</option>
+      <option value="ridge" title="Defines a 3D ridged border. The effect depends on the border-color value">Ridge</option>
+      <option value="inset" title="Defines a 3D inset border. The effect depends on the border-color value">Inset</option>
+      <option value="outset" title="Defines a 3D outset border. The effect depends on the border-color value">Outset</option>
+      <option value="hidden" title="Defines a hidden border">Hidden</option>
+    </select>
+    <label for="border-type">Type</label>
+    <br>
+    <input type="number" value="0" min="0" id="border-size">
+    <select id="border-size-type" sizeType></select>
+    <label for="border-size-type">Size</label>
+    <br>
+    <input type="color" id="border-color">
+    <label for="border-color">Color</label>
+    <br>
+    <input type="number" min="0" value="0" id="border-round">
+    <select id="border-round-type" sizeType></select>
+    <label for="border-round-type">Round</label>
+  </details>
+  <details>
+    <summary>Spacing</summary>
+    <input type="number" value="0" id="spacing-word">
+    <select id="spacing-word-type" sizeType></select>
+    <label for="spacing-word-type">Word</label>
+    <br>
+    <input type="number" value="0" id="spacing-letter">
+    <select id="spacing-letter-type" sizeType></select>
+    <label for="spacing-letter-type">Letter</label>
+  </details>
+  <script src="jquery.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
