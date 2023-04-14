@@ -84,6 +84,9 @@ function setup () {
     css += `word-spacing: ${document.getElementById("spacing-word").value}${document.getElementById("spacing-word-type").value};`
   if (document.getElementById("spacing-letter").value != 0)
     css += `letter-spacing: ${document.getElementById("spacing-letter").value}${document.getElementById("spacing-letter-type").value};`
+  // Box Shadow
+  if (document.getElementById("bshadow-width").value != 0 || document.getElementById("bshadow-height").value != 0 || document.getElementById("bshadow-scale").value != 0)
+    css += `box-shadow: ${document.getElementById("bshadow-width").value}${document.getElementById("bshadow-width-type").value} ${document.getElementById("bshadow-height").value}${document.getElementById("bshadow-height-type").value} ${document.getElementById("bshadow-scale").value}${document.getElementById("bshadow-scale-type").value} ${document.getElementById("bshadow-color").value}`
   // Out
   document.getElementById("preview").contentWindow.document.body.innerHTML = ""
   document.getElementById("preview").contentWindow.document.head.innerHTML = ""
@@ -119,8 +122,7 @@ function sources (type) {
 }
 
 
-$("input").change(function() {setup()})
-$("select").change(function() {setup()})
+$("input, select, textarea").change(function() {setup()})
 const sizeType = ["px", "%", "vm", "vh", "vw", "vmin", "vmax", "vb", "vi", "svw", "svh", "lvh", "lvw", "dvw", "dvh", "cm", "mm", "q", "in", "pc", "pt", "em", "ex", "ch", "rem", "lh", "rlh", ""]
 sizeType.map((a) => {
   const el = document.createElement("option")

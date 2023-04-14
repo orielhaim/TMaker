@@ -11,9 +11,16 @@
   <title>TMaker</title>
   <link rel="icon" type="image/x-icon" href="/logo.png">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div id="box">
+    <a id="BTitle">TMaker</a><br><br><br><br><br><br><br><br><br><br><br>
   <select id="tag">
     <option value="p">P</option>
     <option value="b">B</option>
@@ -32,7 +39,7 @@
     <option value="input">Input</option>
     <option value="textarea">Textarea</option>
   </select>
-  <label for="tag">Select Tag</label><br>
+  <label for="tag">Select Tag</label><br><br>
   <button id="preview-btn">Preview</button>
   <button id="source-btn">Source</button>
   <div id="preview-back" style="display:none;"><iframe id="preview"></iframe></div>
@@ -48,10 +55,9 @@
     <p class="source-divided">CSS</p>
     <textarea id="source-css" class="source-divided" disabled></textarea>
   </div></div>
-  <hr>
   <details>
     <summary>Data</summary>
-    <input type="text" placeholder="Value" id="data-value"><br>
+    <textarea type="text" placeholder="Value" id="data-value"></textarea><br>
     <input type="text" placeholder="ID" id="data-id"><br>
     <input type="text" placeholder="Class" id="data-class">
   </details>
@@ -114,6 +120,28 @@
     <select id="spacing-letter-type" sizeType></select>
     <label for="spacing-letter-type">Letter</label>
   </details>
+  <details>
+    <summary>Box Shadow</summary>
+    <input type="number" value="0" id="bshadow-width">
+    <select id="bshadow-width-type" sizeType></select>
+    <label for="bshadow-width-type">Width</label>
+    <br>
+    <input type="number" value="0" id="bshadow-height">
+    <select id="bshadow-height-type" sizeType></select>
+    <label for="bshadow-height-type">height</label>
+    <br>
+    <input type="number" value="0" id="bshadow-scale">
+    <select id="bshadow-scale-type" sizeType></select>
+    <label for="bshadow-scale-type">Scale</label>
+    <br>
+    <input type="color" value="0" id="bshadow-color">
+    <label for="bshadow-color">Color</label>
+  </details>
+  <details>
+    <summary>Supported</summary>
+    <input type="checkbox" id="support-webkit">
+    <label for="support-webkit">WebKit</label>
+  </details></div>
   <script src="jquery.js"></script>
   <script src="script.js"></script>
 </body>
