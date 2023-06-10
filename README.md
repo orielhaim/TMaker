@@ -1,1 +1,2 @@
 # TMaker
+TMaker is a free site for creating custom HTML tags easily and quickly. No prior knowledge is needed. Just mark and select what is needed. You can see the result and at the end of the process receive the code in several forms. Everything is completely free!

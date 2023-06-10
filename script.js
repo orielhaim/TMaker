@@ -6,8 +6,10 @@ document.getElementById("preview-btn").onclick = function (){
     previwe.style.display = "none"
   }
 }
-document.getElementById("preview-back").onclick = function () {
-  this.style.display = "none"
+document.getElementById("preview-back").onclick = function (e) {
+  if (e.target.offsetParent != document.getElementById("preview")) {
+    this.style.display = "none";
+  }
 }
 document.getElementById("source-btn").onclick = function (){
   const source = document.getElementById("source-back")
@@ -19,8 +21,10 @@ document.getElementById("source-btn").onclick = function (){
     source.style.display = "none"
   }
 }
-document.getElementById("source-back").onclick = function () {
-  this.style.display = "none"
+document.getElementById("source-back").onclick = function (e) {
+  if (e.target.offsetParent != document.getElementById("source")) {
+    this.style.display = "none";
+  }
 }
 document.getElementById("source-type").onchange = function() {
   sources(this.value)
@@ -79,6 +83,12 @@ function setup () {
     css += `border: ${border_size} ${border_type} ${border_color};`
   if (document.getElementById("border-round").value > 0)
     css += `border-radius: ${border_round};`
+  // Margin
+  if (document.getElementById("margin").value > 0)
+    css += `margin: ${document.getElementById("margin").value}${document.getElementById("margin-type").value};`
+  // Padding
+  if (document.getElementById("padding").value > 0)
+    css += `padding: ${document.getElementById("padding").value}${document.getElementById("padding-type").value};`
   // Spacing
   if (document.getElementById("spacing-word").value != 0)
     css += `word-spacing: ${document.getElementById("spacing-word").value}${document.getElementById("spacing-word-type").value};`
@@ -86,7 +96,7 @@ function setup () {
     css += `letter-spacing: ${document.getElementById("spacing-letter").value}${document.getElementById("spacing-letter-type").value};`
   // Box Shadow
   if (document.getElementById("bshadow-width").value != 0 || document.getElementById("bshadow-height").value != 0 || document.getElementById("bshadow-scale").value != 0)
-    css += `box-shadow: ${document.getElementById("bshadow-width").value}${document.getElementById("bshadow-width-type").value} ${document.getElementById("bshadow-height").value}${document.getElementById("bshadow-height-type").value} ${document.getElementById("bshadow-scale").value}${document.getElementById("bshadow-scale-type").value} ${document.getElementById("bshadow-color").value}`
+    css += `box-shadow: ${document.getElementById("bshadow-width").value}${document.getElementById("bshadow-width-type").value} ${document.getElementById("bshadow-height").value}${document.getElementById("bshadow-height-type").value} ${document.getElementById("bshadow-scale").value}${document.getElementById("bshadow-scale-type").value} ${document.getElementById("bshadow-color").value};`
   // Out
   document.getElementById("preview").contentWindow.document.body.innerHTML = ""
   document.getElementById("preview").contentWindow.document.head.innerHTML = ""
